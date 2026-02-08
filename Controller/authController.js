@@ -9,7 +9,7 @@ exports.signup = async (req, res, next) => {
       const err = new Error(error.details[0].message);
       err.status = 400;
       return next(err);
-    }
+    } 
     const {
       name,
       email,
