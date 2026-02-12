@@ -6,7 +6,7 @@ const bookingSchema = new Schema({
     ref: "user",
     required: true,
   },
-  procider: {
+  provider: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",
     required: true,

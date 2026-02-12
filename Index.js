@@ -17,6 +17,7 @@ const URL = process.env.MONGO_URL;
 //router
 const authRoutes = require("./Router/authRoutes");
 const provider = require("./Router/providerRoute");
+const booking = require("./Router/bookingRoutes");
 
 //cors
 app.use(bodyParser.json());
@@ -32,6 +33,7 @@ app.use(
 app.use("/", authRoutes);
 app.use("/", authRoutes);
 app.use("/", provider);
+app.use("/", booking);
 
 app.use(errormiddleware);
 app.listen(port, () => {
