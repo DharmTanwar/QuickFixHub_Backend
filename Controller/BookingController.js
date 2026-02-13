@@ -8,10 +8,10 @@ const booking = async (req, res, next) => {
       err.status = 400;
       return next(err);
     }
-    const { user, provider, service, bookingDate, bookingTime, status } =
+    const {  provider, service, bookingDate, bookingTime, status } =
       req.body;
     const booking = new bookingModel({
-      user,
+      user:req.user._id,
       provider,
       service,
       bookingDate,

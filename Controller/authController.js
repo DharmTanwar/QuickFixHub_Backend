@@ -37,6 +37,7 @@ exports.signup = async (req, res, next) => {
       success: true,
       message: "user is created",
       token: token,
+      data:user,
     });
   } catch (err) {
     return next(err);

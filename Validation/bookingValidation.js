@@ -1,10 +1,7 @@
 const Joi = require("joi");
 
 const bookingValidation = Joi.object({
-  user: Joi.string().required().messages({
-    "string.empty": "User is required",
-    "any.required": "User is required",
-  }),
+  user: Joi.string(),
 
   provider: Joi.string().required().messages({
     "string.empty": "Provider is required",
@@ -23,7 +20,6 @@ const bookingValidation = Joi.object({
   }),
 
   bookingTime: Joi.string()
-    .pattern(/^\d{1,2}:\d{2}$/)
     .required()
     .messages({
       "string.pattern.base": "Time must be in HH:MM format",
