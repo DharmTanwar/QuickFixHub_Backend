@@ -34,6 +34,7 @@ app.use("/", authRoutes);
 app.use("/", authRoutes);
 app.use("/", provider);
 app.use("/", booking);
+app.use("/", booking);
 
 app.use(errormiddleware);
 app.listen(port, () => {

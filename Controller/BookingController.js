@@ -8,10 +8,9 @@ const booking = async (req, res, next) => {
       err.status = 400;
       return next(err);
     }
-    const {  provider, service, bookingDate, bookingTime, status } =
-      req.body;
+    const { provider, service, bookingDate, bookingTime, status } = req.body;
     const booking = new bookingModel({
-      user:req.user._id,
+      user: req.user._id,
       provider,
       service,
       bookingDate,
@@ -29,4 +28,16 @@ const booking = async (req, res, next) => {
   }
 };
 
-module.exports = booking;
+const getbooking = async (req, res, next) => {
+  try {
+    const getbooking = await bookingModel.find({ provider: req.user._id });
+    res.status(200).json({
+      success: true,
+      data: getbooking,
+    });
+  } catch (err) {
+    return next(err);
+  }
+};
+
+module.exports = { booking, getbooking };
