@@ -23,7 +23,7 @@ const booking = require("./Router/bookingRoutes");
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://quickfixhub.netlify.app/"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }),
@@ -36,6 +36,9 @@ app.use("/", provider);
 app.use("/", booking);
 app.use("/", booking);
 
+app.get("/health", (req, res) => {
+  res.send("OK");
+});
 app.use(errormiddleware);
 app.listen(port, () => {
   console.log(`app is listting at port ${port}`);

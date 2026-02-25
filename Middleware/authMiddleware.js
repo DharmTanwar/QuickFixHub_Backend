@@ -10,7 +10,7 @@ const authmiddleware = async (req, res, next) => {
         success: false,
         message: "No token provided",
       });
-    }
+    } 
     const token = authHeader.split(" ")[1];
     const decoded = jwt.verify(token, process.env.SECRET_KEY);
     const user = await userModel.findById(decoded.userId).select("-password");
@@ -29,3 +29,7 @@ const authmiddleware = async (req, res, next) => {
 };
 
 module.exports = authmiddleware;
+
+
+
+
