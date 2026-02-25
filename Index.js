@@ -23,7 +23,7 @@ const booking = require("./Router/bookingRoutes");
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["https://quickfixhub.netlify.app/"],
+    origin: ["https://quickfixhub.netlify.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }),
